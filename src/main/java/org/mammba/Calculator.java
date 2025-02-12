@@ -10,7 +10,7 @@ public class Calculator {
         return (int) sum;
     }
     public int multiply(double... numbers){
-        double sum = 0;
+        double sum = 1;
         for(double number : numbers){
             sum*=number;
         }

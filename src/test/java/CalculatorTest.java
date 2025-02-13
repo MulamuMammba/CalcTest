@@ -41,4 +41,36 @@ public class CalculatorTest {
         assertEquals(120,c);
 
     }
+    @Test
+    public void subtract(){
+        //Arrange
+        int a = 0, b = 0,c = 0;
+
+        //Act
+        a= calc.multiply(1,3);
+        b = calc.multiply(-1,3);
+        c = calc.multiply(20,1,2,3,4,5);
+
+        //Assert
+        assertEquals(-2,a);
+        assertEquals(-4,b);
+        assertEquals(5,c);
+
+    }
+    @Test
+    public void divide(){
+        //Arrange
+        int a = 0, b = 0,c = 0;
+
+        //Act
+        a= calc.multiply(3,3);
+        b = calc.multiply(15,3);
+        c = calc.multiply(500,-10,5,2);
+
+        //Assert
+        assertEquals(1,a);
+        assertEquals(5,b);
+        assertEquals(-5,c);
+
+    }
 }

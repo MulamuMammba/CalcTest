@@ -1,76 +1,37 @@
-import org.junit.Test;
-import org.mammba.Calculator;
+package org.mammba;
 
-import static org.junit.Assert.assertEquals;
+public class Calculator {
 
-
-public class CalculatorTest {
-
-    Calculator calc = new Calculator();
-
-    @Test
-    public void add(){
-        //Arrange
-        int a = 0, b = 0,c = 0;
-
-        //Act
-        a= calc.add(1,2);
-        b = calc.add(-1,-1);
-        c = calc.add(1,2,3,4,5);
-
-        //Assert
-        assertEquals(3,a);
-        assertEquals(-2,b);
-        assertEquals(15,c);
-
+    public int add(double... numbers){
+        double ans = 0;
+        for(double number : numbers){
+            ans+=number;
+        }
+        return (int) ans;
     }
-
-    @Test
-    public void multiply(){
-        //Arrange
-        int a = 0, b = 0,c = 0;
-
-        //Act
-        a= calc.multiply(1,3);
-        b = calc.multiply(-1,3);
-        c = calc.multiply(1,2,3,4,5);
-
-        //Assert
-        assertEquals(3,a);
-        assertEquals(-3,b);
-        assertEquals(120,c);
-
+    public int multiply(double... numbers){
+        double ans = 1;
+        for(double number : numbers){
+            ans*=number;
+        }
+        return (int) ans;
     }
-    @Test
-    public void subtract(){
-        //Arrange
-        int a = 0, b = 0,c = 0;
+    
+    public int subtract(double... numbers){
 
-        //Act
-        a= calc.multiply(1,3);
-        b = calc.multiply(-1,3);
-        c = calc.multiply(20,1,2,3,4,5);
-
-        //Assert
-        assertEquals(-2,a);
-        assertEquals(-4,b);
-        assertEquals(5,c);
-
+        double ans = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            ans-=numbers[i];
+        }
+        return (int) ans;
     }
-    @Test
-    public void divide(){
-        //Arrange
-        int a = 0, b = 0,c = 0;
+    
+    public int divide(double... numbers){
 
-        //Act
-        a= calc.multiply(3,3);
-        b = calc.multiply(15,3);
-        c = calc.multiply(500,-10,5,2);
-
-        //Assert
-        assertEquals(1,a);
-        assertEquals(5,b);
-        assertEquals(-5,c);
-
+        double ans = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            ans/=numbers[i];
+        }
+        return (int) ans;
     }
 }

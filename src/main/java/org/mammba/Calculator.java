@@ -18,17 +18,19 @@ public class Calculator {
     }
     
     public int subtract(double... numbers){
-        double ans = 0;
-        for(double number : numbers){
-            ans-=number;
+
+        double ans = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            ans-=numbers[i];
         }
         return (int) ans;
     }
     
     public int divide(double... numbers){
-        double ans = 1;
-        for(double number : numbers){
-            ans/=number;
+
+        double ans = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            ans/=numbers[i];
         }
         return (int) ans;
     }

@@ -2,6 +2,9 @@
 
 This project demonstrates the process of writing unit tests for a basic calculator application. The calculator supports the following operations: addition, multiplication, subtraction, and division. The unit tests are written using the JUnit framework to validate the correctness of these operations.
 
+## Frontend
+![3](https://github.com/user-attachments/assets/cde83e49-601d-45ac-93e5-3731fa9d3d60)
+
 ## Calculator Methods
 
 The `Calculator` class includes the following methods:
@@ -18,4 +21,7 @@ The `Calculator` class includes the following methods:
 
 Unit tests are written in the `CalculatorTest.java` file and include test cases for each operation. The test cases validate whether the `Calculator` class methods work as expected. The test cases cover various scenarios including normal cases, edge cases, and exceptions.
 
-
+## Technology
+- **Backend** - Java, Springboot 
+- **Frontend** - Thymeleaf
+- **Testing** - Junit

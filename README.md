@@ -15,7 +15,8 @@ The `Calculator` class includes the following methods:
 - **divide(double... numbers)**: Divides numbers in sequence (starting from the first number).
 
 ## Screenshots of unit test passes
-![Screenshot 2025-02-13 135254](https://github.com/user-attachments/assets/bcaa25a6-994b-4796-846f-b1b0c8d53867)
+![12](https://github.com/user-attachments/assets/751dd271-027d-40f4-925e-272f6d01f0a0)
+
 
 ## Unit Tests
 

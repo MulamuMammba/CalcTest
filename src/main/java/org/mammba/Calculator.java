@@ -25,13 +25,16 @@ public class Calculator {
         }
         return (int) ans;
     }
-    
-    public int divide(double... numbers){
 
+    public double divide(double... numbers) {
         double ans = numbers[0];
         for (int i = 1; i < numbers.length; i++) {
-            ans/=numbers[i];
+            if (numbers[i] == 0) {
+                return Double.NaN; // Avoid division by zero
+            }
+            ans /= numbers[i];
         }
-        return (int) ans;
+        return ans;
     }
+
 }

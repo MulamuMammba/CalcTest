@@ -1,67 +1,67 @@
 import org.junit.Test;
 import org.mammba.Calculator;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class CalculatorTest {
     Calculator calc = new Calculator();
 
     @Test
-    public void add() {
-        //Arrange
-        int a = 0, b = 0, c = 0;
-        //Act
-        a = calc.add(1, 2);
-        b = calc.add(-1, -1);
-        c = calc.add(1, 2, 3, 4, 5);
-        //Assert
-        assertEquals(3, a);
-        assertEquals(-2, b);
-        assertEquals(15, c);
+    public void testAdditionWithPositiveNumbers() {
+        assertEquals(3, calc.add(1, 2));
     }
 
     @Test
-    public void multiply() {
-        //Arrange
-        int a = 0, b = 0, c = 0;
-        //Act
-        a = calc.multiply(1, 3);
-        b = calc.multiply(-1, 3);
-        c = calc.multiply(1, 2, 3, 4, 5);
-        //Assert
-        assertEquals(3, a);
-        assertEquals(-3, b);
-        assertEquals(120, c);
+    public void testAdditionWithNegativeNumbers() {
+        assertEquals(-2, calc.add(-1, -1));
     }
 
     @Test
-    public void subtract() {
-        //Arrange
-        int a = 0, b = 0, c = 0;
-
-        //Act
-        a = calc.subtract(1, 3);
-        b = calc.subtract(-1, 3);
-        c = calc.subtract(20, 1, 2, 3, 4, 5);
-
-        //Assert
-        assertEquals(-2, a);
-        assertEquals(-4, b);
-        assertEquals(5, c);
+    public void testAdditionWithMultipleNumbers() {
+        assertEquals(15, calc.add(1, 2, 3, 4, 5));
     }
 
     @Test
-    public void divide() {
-        //Arrange
-        int a = 0, b = 0, c = 0;
-        //Act
-        a = calc.divide(3, 3);
-        b = calc.divide(15, 3);
-        c = calc.divide(500, -10, 5, 2);
+    public void testMultiplicationWithPositiveNumbers() {
+        assertEquals(3, calc.multiply(1, 3));
+    }
 
-        //Assert
-        assertEquals(1, a);
-        assertEquals(5, b);
-        assertEquals(-5, c);
+    @Test
+    public void testMultiplicationWithNegativeNumbers() {
+        assertEquals(-3, calc.multiply(-1, 3));
+    }
+
+    @Test
+    public void testMultiplicationWithMultipleNumbers() {
+        assertEquals(120, calc.multiply(1, 2, 3, 4, 5));
+    }
+
+    @Test
+    public void testSubtractionWithPositiveNumbers() {
+        assertEquals(-2, calc.subtract(1, 3));
+    }
+
+    @Test
+    public void testSubtractionWithNegativeNumbers() {
+        assertEquals(-4, calc.subtract(-1, 3));
+    }
+
+    @Test
+    public void testSubtractionWithMultipleNumbers() {
+        assertEquals(5, calc.subtract(20, 1, 2, 3, 4, 5));
+    }
+
+    @Test
+    public void testDivisionWithPositiveNumbers() {
+        assertEquals(1, calc.divide(3, 3), 0.0001);
+    }
+
+    @Test
+    public void testDivisionWithMultipleNumbers() {
+        assertEquals(-5, calc.divide(500, -10, 5, 2), 0.0001);
+    }
+
+    @Test
+    public void testDivisionByZero() {
+        assertTrue("Division by zero should return NaN", Double.isNaN(calc.divide(5, 0)));
     }
 }
